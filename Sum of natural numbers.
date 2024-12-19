@@ -1,0 +1,41 @@
+#include <iostream>
+
+// Function to calculate the sum of natural numbers iteratively
+int sumOfNaturalNumbersIterative(int n) {
+    int sum = 0;
+    for (int i = 1; i <= n; ++i) {
+        sum += i;
+    }
+    return sum;
+}
+
+// Function to calculate the sum of natural numbers recursively
+int sumOfNaturalNumbersRecursive(int n) {
+    if (n == 1) {
+        return 1; // Base case
+    }
+    return n + sumOfNaturalNumbersRecursive(n - 1); // Recursive case
+}
+
+int main() {
+    int n;
+
+    std::cout << "Enter a positive integer: ";
+    std::cin >> n;
+
+    if (n < 1) {
+        std::cout << "Please enter a positive integer greater than 0." << std::endl;
+        return 1; // Exit if the input is not valid
+    }
+
+    // Calculate sum using iterative method
+    int iterativeSum = sumOfNaturalNumbersIterative(n);
+    std::cout << "Sum of natural numbers up to " << n << " (iterative): " << iterativeSum << std::endl;
+
+    // Calculate sum using recursive method
+    int recursiveSum = sumOfNaturalNumbersRecursive(n);
+    std::cout << "Sum of natural numbers up to " << n << " (recursive): " << recursiveSum << std::endl;
+
+    return 0;
+}
+
